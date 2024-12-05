@@ -1,30 +1,28 @@
 ###### Settings ###### 
-setwd("C:/Documents and Settings/admm414r/Documents/GitHub/AgingClock_v2/")
+setwd("/projects/Fabian_Rost/data_analysis/huch_lab_scNMTseq/scNMT_methylseq_downstream/analysis/02_scEpiAge/scEpiAge/")
 ##Tissue, options are: liver, lung, blood.
 tissue="liver"
 
 ##Folder with COV files.
-#folderInput = "Gravina_2016/Bulk/"
-#folderInput = "Gravina_2016/SingleCell/"
+folderInput = "../output/cov_files/"
 
 ## output file with aging information.
-#outputFileName="./preditionGravinaBulk.txt"
-outputFileName="./preditionGravinaSc.txt"
+outputFileName="./predition.txt"
 
 ##If there are known age calculate confidence on the difference observed.
 nSimulations = 5
 
 ##Age information
-# ageInfo = NULL
+ageInfo = NULL
 #ageInfo = read.delim("./GravinaBulkInfo.txt")
-ageInfo = read.delim("./GravinaScInfo2.txt")
+# ageInfo = read.delim("./GravinaScInfo.txt")
 
 ## ouput file name with extended information.
-# outputFileNameExtended = NA
+outputFileNameExtended = NA
 # outputFileNameExtended="./preditionGravinaBulk.extended.txt"
 # outputFileNameExtended="./preditionGravinaSc.extended.txt"
 
-plot=T
+plot=F
 
 ###################### 
 
