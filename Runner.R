@@ -1,13 +1,13 @@
 ###### Settings ###### 
-setwd("/projects/Fabian_Rost/data_analysis/huch_lab_scNMTseq/scNMT_methylseq_downstream/analysis/02_scEpiAge/scEpiAge/")
+# setwd("./scEpiAge/")
 ##Tissue, options are: liver, lung, blood.
 tissue="liver"
 
 ##Folder with COV files.
-folderInput = "../output/cov_files/"
+folderInput = "./cov/"
 
 ## output file with aging information.
-outputFileName="./predition.txt"
+outputFileName="./age_predition.txt"
 
 ##If there are known age calculate confidence on the difference observed.
 nSimulations = 5
@@ -38,19 +38,19 @@ if(!is.na(outputFileNameExtended) & !is.null(ageInfo)){
 
 ###### Source ########
 ##source prediction functions.
-source("./PredictionFunctions/functions.R")
+source("./scEpiAge/PredictionFunctions/functions.R")
 ###################### 
 
 ##### Load data ######
 if(tissue=="liver"){
-  expectedMethMatrix <- read.delim("./ExpectedMethylationMatrices/ExpectedMethMat_Liver.tsv",as.is=T,row.names=1,check.names = F)
-  backupInformation <- read.delim("./SiteInformation/clockSites_Liver_BackUp.txt",as.is=T)
+  expectedMethMatrix <- read.delim("./scEpiAge/ExpectedMethylationMatrices/ExpectedMethMat_Liver.tsv",as.is=T,row.names=1,check.names = F)
+  backupInformation <- read.delim("./scEpiAge/SiteInformation/clockSites_Liver_BackUp.txt",as.is=T)
 } else if(tissue=="lung"){
-  expectedMethMatrix <- read.delim("./ExpectedMethylationMatrices/ExpectedMethMat_Lung.tsv",as.is=T,row.names=1,check.names = F)
-  backupInformation <- read.delim("./SiteInformation/clockSites_Lung_BackUp.txt",as.is=T)
+  expectedMethMatrix <- read.delim("./scEpiAge/ExpectedMethylationMatrices/ExpectedMethMat_Lung.tsv",as.is=T,row.names=1,check.names = F)
+  backupInformation <- read.delim("./scEpiAge/SiteInformation/clockSites_Lung_BackUp.txt",as.is=T)
 } else if(tissue=="blood"){
-  expectedMethMatrix <- read.delim("./ExpectedMethylationMatrices/ExpectedMethMat_Blood.tsv",as.is=T,row.names=1,check.names = F)
-  backupInformation <- read.delim("./SiteInformation/clockSites_Blood_BackUp.txt",as.is=T)
+  expectedMethMatrix <- read.delim("./scEpiAge/ExpectedMethylationMatrices/ExpectedMethMat_Blood.tsv",as.is=T,row.names=1,check.names = F)
+  backupInformation <- read.delim(".scEpiAge/SiteInformation/clockSites_Blood_BackUp.txt",as.is=T)
 } else{
   print("No valid tissue selected")
   stop();
